@@ -1,10 +1,6 @@
 
     <nav class="flex justify-between items-center container m-auto gap-5">
         <div class="flex items-center">
-<<<<<<< HEAD
-            <img src="{{ asset('assets/logo/noBgColor-1920w.webp') }}" alt="Logo" class="h-8 w-8 mr-2">
-            <span class="text-xl font-bold">My Website</span>
-=======
             <img src="{{ asset('assets/logo/noBgColor-1920w.webp') }}" alt="Logo" class="w-50 object-cover mr-2">
             <!-- <span class="text-xl font-bold">My Website</span> -->
         </div>
@@ -35,7 +31,6 @@
                 <input type="text" name="search" placeholder="Search for products" class="w-full outline-none">
                 </div>
             </form>
->>>>>>> ae72262a532d9d3ecc7e32b9574293bc5e679773
         </div>
         <ul class="flex space-x-4">
             <li><a href="" class="text-secondary hover:text-tertiary">Login</a></li>
