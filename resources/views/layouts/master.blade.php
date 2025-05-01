@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="{{asset('assets/css/global.css')}}">
     @vite('resources/css/app.css')
     @yield('css')
 </head>
 
 <body>
-    <head class="bg-gray-100">
+    <header class="bg-primary px-5 py-3 shadow">
         @include('layouts.header')
-    </head>
+    </header>
 
     @yield('banner')
     @yield('content')
