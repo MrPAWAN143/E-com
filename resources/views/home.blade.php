@@ -80,7 +80,7 @@
 
 
 @section('content')
-<h1 class="bg-[var(--tertiary-300)] font-bold p-4">Content </h1><x-bi-megaphone-fill />
+<h1 class="bg-[var(--tertiary-400)]">Content</h1>
 
 @endsection
 
