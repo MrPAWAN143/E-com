@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <head class="bg-gray-100">
+    <header class="bg-gray-100">
         @include('layouts.header')
-    </head>
+    </header>
 
     @yield('banner')
     @yield('content')
