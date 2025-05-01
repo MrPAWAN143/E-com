@@ -11,7 +11,7 @@
 
 
 @section('content')
-<h1 class="bg-[var(--tertiary-300)]">Content</h1>
+<h1 class="bg-[var(--tertiary-400)]">Content</h1>
 
 @endsection
 
