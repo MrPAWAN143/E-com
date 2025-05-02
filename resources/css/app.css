@@ -1,11 +1,44 @@
 @import "tailwindcss";
 @source "../views";
 
+
 @theme{
 	--color-primary:#F2DFCE;
 	--color-text:#f2f2f2;
 	--color-tertiary:#733917;
 	--color-secondary:#A67951;
 	--color-contrast:#1A2426;
+}
 
+@layer components{
+	.dropdown{
+		position: absolute;
+		z-index: 10;
+		top: 68px;
+		min-width: 50%;
+		box-shadow: 0px 10px 12px var(--color-contrast);
+		visibility: hidden;
+		opacity: 0;
+		transition: 300ms ease-in-out;
+	}
+
+	.nav-item:hover .dropdown{
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.dropdown-item{
+		padding-bottom: 10px;
+	}
+
+	.dropdown-link{
+		display:inline-block ;
+		color: var(--color-secondary);
+		transition: 300ms ease-in-out;
+	}
+
+	.dropdown-link:hover{
+		color: var(--color-tertiary);
+		
+	}
 }
