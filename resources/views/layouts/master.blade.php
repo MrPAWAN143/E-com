@@ -21,7 +21,7 @@
     <footer>
         @include('layouts.footer')
     </footer>
-
+    <script src="{{ asset("assets/js/global.js") }}"></script>
     @yield('javascript')
 </body>
 </html>
