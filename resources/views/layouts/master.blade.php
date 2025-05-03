@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header class="bg-primary px-5 py-3 shadow">
+    <header class="bg-primary px-5 shadow">
         @include('layouts.header')
     </header>
 
