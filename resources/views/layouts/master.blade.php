@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('assets/css/global.css')}}">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('css')
 </head>
 
@@ -22,7 +22,6 @@
         @include('layouts.footer')
     </footer>
 
-    <script src="{{asset('assets/js/jquery-3.7.1.min.js')}}"></script>
     @yield('javascript')
 </body>
 </html>
