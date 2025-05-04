@@ -1,10 +1,11 @@
 <div class="container m-auto py-12">
-	<div class="footer-wrapper flex flex-col lg:flex-row gap-20 justify-between text-text pb-7">
+	<div class="footer-wrapper flex flex-col md:flex-row gap-20 justify-between text-text pb-7">
 		<div class="f-content  flex-1">
 			<h3 class="text-3xl font-semibold text-tertiary  pb-7.5"><a href="#">LUXEMART</a></h3>
-			<p class="text-sm/7 max-w-63">We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+			<p class="text-sm/7 max-w-63">We have clothes that suits your style and which you're proud to wear. From
+				women to men.</p>
 		</div>
-		<div class="flex justify-between  flex-col lg:flex-row flex-2">
+		<div class="flex justify-between md:gap-4 flex-col md:flex-row flex-2">
 			<div class="f-content ">
 				<h3 class="pb-7.5 uppercase tracking-[4px]">Company</h3>
 				<ul>
@@ -44,11 +45,16 @@
 		</div>
 	</div>
 	<hr>
-	<div class="copyright-payments flex flex-col lg:flex-row gap-4 items-center justify-between mt-5">
+	<div class="copyright-payments flex flex-col md:flex-row gap-4 items-center justify-between mt-5">
 		<p class="text-xs text-gray-100 ">LUXEMART &copy; 2025-2027. All right Reserved</p>
 		<div class="payments_method flex items-center gap-4">
-			<a href="#" class="inline-block"><img src="#" alt="Visa Crad"></a>
-			<a href="#" class="inline-block"><img src="#" alt="Visa Crad"></a>
+			<a href="#" class="inline-block bg-text px-2.5">
+			<x-ri-visa-line  class="w-8"/>
+			</a>
+			<a href="#" class="inline-block bg-text p-2.5 ">
+			<x-bi-paypal class="w-8" />
+
+			</a>
 			<a href="#" class="inline-block"><img src="#" alt="Visa Crad"></a>
 			<a href="#" class="inline-block"><img src="#" alt="Visa Crad"></a>
 		</div>
