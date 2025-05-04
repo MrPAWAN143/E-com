@@ -44,19 +44,22 @@
 			</div>
 		</div>
 	</div>
-	<hr>
+	<hr class="border-gray-500">
 	<div class="copyright-payments flex flex-col md:flex-row gap-4 items-center justify-between mt-5">
 		<p class="text-xs text-gray-100 ">LUXEMART &copy; 2025-2027. All right Reserved</p>
 		<div class="payments_method flex items-center gap-4">
 			<a href="#" class="inline-block bg-text px-2.5">
 			<x-ri-visa-line  class="w-8"/>
 			</a>
-			<a href="#" class="inline-block bg-text p-2.5 ">
-			<x-bi-paypal class="w-8" />
-
+			<a href="#" class="inline-block bg-text px-3.5 ">
+			<x-bi-paypal class="w-6 h-8" />
 			</a>
-			<a href="#" class="inline-block"><img src="#" alt="Visa Crad"></a>
-			<a href="#" class="inline-block"><img src="#" alt="Visa Crad"></a>
+			<a href="#" class="inline-block bg-text px-2.5">
+			<x-ri-mastercard-fill class="w-8 h-8" />
+			</a>
+			<a href="#" class="inline-block px-2.5 bg-text">
+			<x-ri-visa-line  class="w-8"/>
+			</a>
 		</div>
 	</div>
 </div>

@@ -9,7 +9,7 @@
             <li class="nav-item py-5.5"><a href="" class="text-secondary hover:text-tertiary">Shop</a></li>
             <li class="nav-item py-5.5"><a href="" class="text-secondary hover:text-tertiary">Category <x-heroicon-m-chevron-down  class="w-6 inline"/></a>
                 <div class="dropdown">
-                    <ul class="dropdown-menu bg-primary rounded-bl-sm rounded-br-sm px-4 py-2">
+                    <ul class="dropdown-menu bg-contrast rounded-bl-sm rounded-br-sm px-4 py-2 ">
                         <li class="dropdown-item"><a href="#" class="dropdown-link">Men's Clothing</a></li>
                         <li class="dropdown-item"><a href="#" class="dropdown-link">Women's Clothing</a></li>
                         <li class="dropdown-item"><a href="#" class="dropdown-link">Kids' Wear</a></li>
@@ -20,7 +20,7 @@
             </li>
             <li class="nav-item py-5.5"><a href="" class="text-secondary hover:text-tertiary">On Sale <x-heroicon-m-chevron-down  class="w-6 inline"/></a>
                 <div class="dropdown">
-                    <ul class="dropdown-menu bg-primary rounded-bl-sm rounded-br-sm px-4 py-2">
+                    <ul class="dropdown-menu bg-contrast rounded-bl-sm rounded-br-sm px-4 py-2">
                         <li class="dropdown-item"><a href="#" class="dropdown-link">Today's Deals</a></li>
                         <li class="dropdown-item"><a href="#" class="dropdown-link">Under ₹999 / $9.99</a></li>
                         <li class="dropdown-item"><a href="#" class="dropdown-link">Clearance Sale</a></li>
@@ -75,7 +75,7 @@
     </nav>
 </div>
 <!-- side nav -->
-<nav class="side-nav bg-primary lg:hidden w-11/12 max-w-lg absolute top-0 left-0 z-60 h-dvh shadow -ml-[767px] transition-all ">
+<nav class="side-nav bg-contrast lg:hidden w-11/12 max-w-lg absolute top-0 left-0 z-60 h-dvh shadow -ml-[767px] transition-all ">
     <div class="nav-wrapper px-6 pb-2">
         <div class="side-nav-logo flex items-center justify-between">
             <a href="#">
@@ -87,8 +87,8 @@
         </div>
         </a>
         <ul class="">
-            <li class=""><a href="#" class="border-b border-tertiary py-5 block text-tertiary">Shop</a></li>
-            <li class="m-navbar-item"><a href="#" class="border-b border-tertiary py-5  text-tertiary flex justify-between sub-menu">category
+            <li class=""><a href="#" class="border-b border-tertiary py-5 block text-secondary">Shop</a></li>
+            <li class="m-navbar-item"><a href="#" class="border-b border-tertiary py-5  text-secondary flex justify-between sub-menu">category
             <x-heroicon-m-chevron-down  class="w-6"/>
                 </a>
                 <div class="side-nav-dropdown">
@@ -101,7 +101,7 @@
                     </ul>
                 </div>
             </li>
-            <li class="m-navbar-item"><a href="#" class="border-b border-tertiary py-5 flex justify-between text-tertiary sub-menu">On Sale
+            <li class="m-navbar-item"><a href="#" class="border-b border-tertiary py-5 flex justify-between text-secondary sub-menu">On Sale
             <x-heroicon-m-chevron-down  class="w-6"/>
                 </a>
                 <div class="side-nav-dropdown ">
@@ -115,8 +115,8 @@
                     </ul>
                 </div>
             </li>
-            <li class=""><a href="#" class="border-b border-tertiary py-5 block text-tertiary">New Arrivals</a></li>
-            <li class=""><a href="#" class="border-b border-tertiary py-5 block text-tertiary">Brands</a></li>
+            <li class=""><a href="#" class="border-b border-tertiary py-5 block text-secondary">New Arrivals</a></li>
+            <li class=""><a href="#" class="border-b border-tertiary py-5 block text-secondary">Brands</a></li>
         </ul>
     </div>
 </nav>
