@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <header class="bg-primary px-5 shadow">
+    <header class="bg-primary px-5 shadow-lg sticky top-0 z-60">
         @include('layouts.header')
     </header>
 
     @yield('banner')
     @yield('content')
 
-    <footer>
+    <footer class="bg-contrast px-5">
         @include('layouts.footer')
     </footer>
     <script src="{{ asset("assets/js/global.js") }}"></script>

@@ -75,7 +75,7 @@
     </nav>
 </div>
 <!-- side nav -->
-<nav class="side-nav bg-primary lg:hidden w-11/12 max-w-lg absolute top-0 bottom-0 left-0 z-60 shadow -ml-[767px] transition-all ">
+<nav class="side-nav bg-primary lg:hidden w-11/12 max-w-lg absolute top-0 left-0 z-60 h-dvh shadow -ml-[767px] transition-all ">
     <div class="nav-wrapper px-6 pb-2">
         <div class="side-nav-logo flex items-center justify-between">
             <a href="#">
