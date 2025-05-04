@@ -80,7 +80,6 @@
 
 
 @section('content')
-
 <section class="bg-black py-6">
     <div class="container mx-auto px-">
         <div class="flex flex-wrap justify-between items-center">
@@ -92,6 +91,70 @@
         </div>
     </div>
 </section>
+<section class="container mx-auto pt-12 bg-white text-center">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-4">
+
+        <!-- Men (With Link) -->
+        <a href="">
+            <div class="relative group cursor-pointer">
+                <div class="overflow-hidden rounded-2xl shadow-lg flex items-start justify-center">
+                    <img src="{{asset('assets/images/categories/men.jpg')}}" alt="Men"
+                        class="w-full h-34 object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+                </div>
+                <p class="mt-2 text-lg font-medium">Men</p>
+            </div>
+        </a>
+
+        <!-- Women -->
+        <div class="relative group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+                <img src="{{asset('assets/images/categories/women.jpg')}}" alt="Women"
+                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
+            <p class="mt-2 text-lg font-medium">Women</p>
+        </div>
+
+        <!-- Kids -->
+        <div class="relative group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+                <img src="{{asset('assets/images/categories/kids.jpg')}}" alt="Kids"
+                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
+            <p class="mt-2 text-lg font-medium">Kids</p>
+        </div>
+
+        <!-- Ethnic -->
+        <div class="relative group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+                <img src="{{asset('assets/images/categories/ethnic.jpg')}}" alt="Ethnic"
+                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
+            <p class="mt-2 text-lg font-medium">Ethnic</p>
+        </div>
+
+        <!-- Sports -->
+        <div class="relative group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+                <img src="{{asset('assets/images/categories/sport.jpg')}}" alt="Sports"
+                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
+            <p class="mt-2 text-lg font-medium">Sports</p>
+        </div>
+
+        <!-- Accessories -->
+        <div class="relative group cursor-pointer">
+            <div class="overflow-hidden rounded-2xl shadow-lg">
+                <img src="{{asset('assets/images/categories/Accessories.jpg')}}" alt="Accessories"
+                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
+            <p class="mt-2 text-lg font-medium">Accessories</p>
+        </div>
+
+    </div>
+</section>
+
+
+
 
 <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
@@ -214,14 +277,14 @@
 </section>
 
 <section class="bg-gray-100 py-12 px-4 rounded-3xl">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-7xl mx-auto">
         <h2 class="text-2xl sm:text-4xl font-extrabold text-center mb-10">BROWSE BY DRESS STYLE</h2>
 
         <div class="grid grid-cols-5 gap-4">
             <!-- Casual -->
             <a href="#" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 col-span-2">
                 <div class="relative">
-                    <img src="" alt="Casual" class="w-full h-60 object-cover" />
+                    <img src="{{asset('assets/images/products/casual.webp')}}" alt="Casual" class="w-full h-100 object-cover" />
                     <span class="absolute top-3 left-3 text-xl font-semibold text-black bg-white/90 px-3 py-1 rounded ">
                         Casual
                     </span>
@@ -231,7 +294,7 @@
             <!-- Formal -->
             <a href="#" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 col-span-3">
                 <div class="relative">
-                    <img src="" alt="Formal" class="w-full h-60 object-cover" />
+                    <img src="{{asset('assets/images/products/formal.webp')}}" alt="Formal" class="w-full h-100 object-cover" />
                     <span class="absolute top-3 left-3 text-xl font-semibold text-black bg-white/90 px-3 py-1 rounded">
                         Formal
                     </span>
@@ -241,7 +304,7 @@
             <!-- Party -->
             <a href="#" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 col-span-3">
                 <div class="relative">
-                    <img src="" alt="Party" class="w-full h-60 object-cover" />
+                    <img src="{{asset('assets/images/products/party.webp')}}" alt="Party" class="w-full h-100 object-cover" />
                     <span class="absolute top-3 left-3 text-xl font-semibold text-black bg-white/90 px-3 py-1 rounded">
                         Party
                     </span>
@@ -251,7 +314,7 @@
             <!-- Gym -->
             <a href="#" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 col-span-2">
                 <div class="relative">
-                    <img src="" alt="Gym" class="w-full h-60 object-cover" />
+                    <img src="{{asset('assets/images/products/gym.webp')}}" alt="Gym" class="w-full h-100 object-cover" />
                     <span class="absolute top-3 left-3 text-xl font-semibold text-black bg-white/90 px-3 py-1 rounded">
                         Gym
                     </span>
@@ -263,14 +326,39 @@
 
 <section class="bg-white py-12 px-4">
     <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-extrabold mb-8 text-black">OUR HAPPY CUSTOMERS</h2>
+        <div class="flex justify-between items-center mb-0 px-8">
+            <h2 class="text-3xl font-extrabold mb-0 text-black">OUR HAPPY CUSTOMERS</h2>
+            <div class="flex items-center gap-0">
+                <button class="prev-slide w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center rounded-full text-primary-700">
+                    <x-heroicon-c-arrow-left class="w-5 sm:w-6 h-5 sm:h-6" />
+                </button>
+                <button class="next-slide w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center rounded-full text-primary-700">
+                    <x-heroicon-c-arrow-right class="w-5 sm:w-6 h-5 sm:h-6" />
+                </button>
 
-        <div class="slider">
-            <div><img src="/images/slide1.jpg" alt="Slide 1">sdsdg</div>
-            <div><img src="/images/slide2.jpg" alt="Slide 2">sd</div>
-            <div><img src="/images/slide3.jpg" alt="Slide 3"></div> 
+            </div>
         </div>
 
+        <div class="autoplay" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "arrows": true, "dots": true}'>
+            @foreach ([1,2,3,4,5] as $i)
+            <div class="px-6 my-4">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center space-x-2 mb-2">
+                        @for ($s = 0; $s < 5; $s++)
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.082 3.323a1 1 0 00.95.69h3.495c.969 0 1.371 1.24.588 1.81l-2.83 2.057a1 1 0 00-.364 1.118l1.082 3.323c.3.921-.755 1.688-1.54 1.118L10 13.348l-2.83 2.057c-.784.57-1.838-.197-1.539-1.118l1.082-3.323a1 1 0 00-.364-1.118L3.52 8.75c-.783-.57-.38-1.81.588-1.81h3.495a1 1 0 00.95-.69l1.082-3.323z" />
+                            </svg>
+                            @endfor
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-1 flex gap-2 items-center">Customer Name {{ $i }}
+                        <div><x-codicon-verified-filled class="text-green-500 text-sm font-semibold w-4" /></div>
+                    </h3>
+                    <p class="text-gray-600 text-sm mb-2">"Lorem ipsum dolor sit amet, lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci fuga, ducimus, exercitationem voluptatibus officiis temporibus fugiat nam repellendus neque reprehenderit."</p>
+
+                </div>
+            </div>
+            @endforeach
+        </div>
     </div>
 </section>
 
