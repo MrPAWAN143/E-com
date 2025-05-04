@@ -282,6 +282,7 @@
 
 
 @section('javascript')
+<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
 <script>
     const slides = document.querySelectorAll('.slide');
     let current = 0;
@@ -305,6 +306,12 @@
         current = (current - 1 + slides.length) % slides.length;
         updateSlides();
     });
+
+    $(document).ready(
+        function(){
+            alert('hello')
+        }
+    )
 </script>
 
 @endsection
