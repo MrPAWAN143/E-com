@@ -14,6 +14,7 @@
         "blade-ui-kit/blade-heroicons": "^2.6",
         "blade-ui-kit/blade-icons": "^1.8",
         "blade-ui-kit/blade-ui-kit": "^0.7.0",
+        "codeat3/blade-codicons": "^1.34",
         "codeat3/blade-eos-icons": "^1.15",
         "davidhsianturi/blade-bootstrap-icons": "^2.0",
         "laravel/framework": "^12.0",
