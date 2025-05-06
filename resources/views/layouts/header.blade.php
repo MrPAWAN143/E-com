@@ -2,7 +2,7 @@
 <div class="hidden lg:block container m-auto">
     <nav class="flex justify-between items-center  gap-5">
         <div class="flex items-center">
-            <a href="#"><img src="{{ asset('assets/logo/logo.png') }}" alt="Logo" class="w-17.5 object-cover mr-2"></a>
+            <a href="#"><img src="{{ asset('assets/logo/logo.png') }}" alt="Logo" class="w-20 object-cover mr-2"></a>
             <!-- <span class="text-xl font-bold">My Website</span> -->
         </div>
         <ul class="flex space-x-5">

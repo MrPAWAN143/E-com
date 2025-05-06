@@ -99,7 +99,7 @@
             <div class="relative group cursor-pointer">
                 <div class="overflow-hidden rounded-2xl shadow-lg flex items-start justify-center">
                     <img src="{{asset('assets/images/categories/men.jpg')}}" alt="Men"
-                        class="w-full h-34 object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+                        class="w-full h-32 object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
                 <p class="mt-2 text-lg font-medium">Men</p>
             </div>
@@ -394,12 +394,6 @@
         current = (current - 1 + slides.length) % slides.length;
         updateSlides();
     });
-
-    $(document).ready(
-        function(){
-            alert('hello')
-        }
-    )
 </script>
 
 @endsection

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header class="bg-contrast px-5 shadow-lg sticky top-0 z-60">
+    <header class="bg-contrast px-5 shadow-lg sticky top-0 z-[9999]">
         @include('layouts.header')
     </header>
 
@@ -21,7 +21,7 @@
     <footer class="bg-contrast px-5">
         @include('layouts.footer')
     </footer>
-    <script src="{{ asset("assets/js/global.js") }}"></script>
+    <script src="{{ asset('assets/js/global.js') }}"></script>
     @yield('javascript')
 </body>
 </html>
