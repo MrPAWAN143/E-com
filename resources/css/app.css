@@ -1,13 +1,13 @@
-@import "tailwindcss";
-@source "../views";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-
-@theme{
-	--color-primary:#F2DFCE;
-	--color-text:#f2f2f2;
-	--color-tertiary:#733917;
-	--color-secondary:#A67951;
-	--color-contrast:#1A2426;
+@theme {
+	--color-primary: #F2DFCE;
+	--color-secondary: #f2f2f2;
+	--color-tertiary: #733917;
+	--color-contrast: #A67951;
+	--color-accent: #1A2426;
 }
 
 @layer components{
