@@ -17,6 +17,7 @@
 
     @yield('banner')
     @yield('content')
+    @yield('userDashboard')
 
     <footer class="bg-contrast px-5">
         @include('layouts.footer')

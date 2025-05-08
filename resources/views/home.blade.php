@@ -370,8 +370,7 @@
 
 
 @section('javascript')
-<script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
-<script>
+<script type="module">
     const slides = document.querySelectorAll('.slide');
     let current = 0;
 
@@ -394,6 +393,37 @@
         current = (current - 1 + slides.length) % slides.length;
         updateSlides();
     });
+
+
+ 
+
+$(document).ready(function () {
+    $('.autoplay').slick({
+        dots: false,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        prevArrow: $('.prev-slide'),
+        nextArrow: $('.next-slide'),
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+});
 </script>
 
 @endsection
