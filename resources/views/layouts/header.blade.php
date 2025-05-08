@@ -7,7 +7,7 @@
         </div>
         <ul class="flex space-x-5">
             <li class="nav-item py-5.5"><a href="" class="text-secondary hover:text-tertiary">Shop</a></li>
-            <li class="nav-item py-5.5"><a href="" class="text-secondary hover:text-tertiary">Category <x-heroicon-m-chevron-down  class="w-6 inline"/></a>
+            <li class="nav-item py-5.5"><a href="" class="text-secondary hover:text-tertiary">Category <x-heroicon-m-chevron-down class="w-6 inline" /></a>
                 <div class="dropdown">
                     <ul class="dropdown-menu bg-contrast rounded-bl-sm rounded-br-sm px-4 py-2 ">
                         <li class="dropdown-item"><a href="#" class="dropdown-link">Men's Clothing</a></li>
@@ -18,7 +18,7 @@
                     </ul>
                 </div>
             </li>
-            <li class="nav-item py-5.5"><a href="" class="text-secondary hover:text-tertiary">On Sale <x-heroicon-m-chevron-down  class="w-6 inline"/></a>
+            <li class="nav-item py-5.5"><a href="" class="text-secondary hover:text-tertiary">On Sale <x-heroicon-m-chevron-down class="w-6 inline" /></a>
                 <div class="dropdown">
                     <ul class="dropdown-menu bg-contrast rounded-bl-sm rounded-br-sm px-4 py-2">
                         <li class="dropdown-item"><a href="#" class="dropdown-link">Today's Deals</a></li>
@@ -35,7 +35,7 @@
         </ul>
         <div class="search_bar flex items-center flex-1  rounded-full p-2 bg-text mx-4">
             <div class="search_icon">
-                <a href="#" class="text-secondary hover:text-tertiary"><x-heroicon-s-magnifying-glass class="w-6"/>
+                <a href="#" class="text-secondary hover:text-tertiary"><x-heroicon-s-magnifying-glass class="w-6" />
                 </a>
             </div>
             <form action="" method="" class="w-full">
@@ -51,8 +51,35 @@
                     <x-heroicon-s-shopping-bag class="w-6" />
                 </a>
             </li>
-            <li><a href="" class="text-secondary hover:text-tertiary"><x-heroicon-s-user class="w-6" />
-                </a></li>
+            @auth
+            @if(auth()->user()->username)
+            <li class="relative group">
+                <a href="#" class="text-secondary hover:text-tertiary flex items-center space-x-2">
+                    <x-heroicon-s-user class="w-6" />
+
+                </a>
+           
+                <!-- Dropdown Menu -->
+                <div class="absolute right-[-50%] hidden py-2 space-y-2 bg-white border border-gray-300 rounded-lg shadow-lg w-48 text-sm text-gray-700 dark:bg-gray-800 dark:border-gray-600 dark:text-white group-hover:block">
+                    <p class="block px-4 py-0"> <span>{{ auth()->user()->username }}</span></p>
+
+                    <a href="{{ route('profile.edit') }}" class="block px-4 py-0 hover:bg-gray-100 dark:hover:bg-gray-700">Edit Profile</a>
+                    <a href="{{ route('user.dashboard') }}" class="block px-4 py-0 hover:bg-gray-100 dark:hover:bg-gray-700">Profile</a>
+                    <form action="{{route('logout')}}" method="post" class="block px-4 py-0 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        @csrf
+                        <button type="submit" class="w-full text-left">Logout</button>
+                    </form>
+                </div>
+            </li>
+            @else
+            <li><a href="{{ route('register') }}" class="text-secondary hover:text-tertiary">Signup</a></li>
+            <li><a href="{{ route('login') }}" class="text-secondary hover:text-tertiary">Login</a></li>
+            @endif
+            @else
+            <li><a href="{{ route('register') }}" class="text-secondary hover:text-tertiary">Signup</a></li>
+            <li><a href="{{ route('login') }}" class="text-secondary hover:text-tertiary">Login</a></li>
+            @endauth
+
         </ul>
     </nav>
 </div>
@@ -82,14 +109,14 @@
                 <img src="{{ asset('assets/logo/logo.png') }}" alt="logo" class="w-12.5">
             </a>
             <a href="#" class="text-tertiary">
-            <x-heroicon-o-x-circle class="w-6" id="close-nav" />
+                <x-heroicon-o-x-circle class="w-6" id="close-nav" />
 
         </div>
         </a>
         <ul class="">
             <li class=""><a href="#" class="border-b border-tertiary py-5 block text-secondary">Shop</a></li>
             <li class="m-navbar-item"><a href="#" class="border-b border-tertiary py-5  text-secondary flex justify-between sub-menu">category
-            <x-heroicon-m-chevron-down  class="w-6"/>
+                    <x-heroicon-m-chevron-down class="w-6" />
                 </a>
                 <div class="side-nav-dropdown">
                     <ul class="m-dropdown-menu">
@@ -102,7 +129,7 @@
                 </div>
             </li>
             <li class="m-navbar-item"><a href="#" class="border-b border-tertiary py-5 flex justify-between text-secondary sub-menu">On Sale
-            <x-heroicon-m-chevron-down  class="w-6"/>
+                    <x-heroicon-m-chevron-down class="w-6" />
                 </a>
                 <div class="side-nav-dropdown ">
                     <ul class="m-dropdown-menu">
