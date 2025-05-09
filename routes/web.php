@@ -14,9 +14,9 @@ Route::get('/product', function () {
     return view('product');
 })->name('product');
 
-Route::get('/add-to-cart', function () {
-    return view('addToCart');
-})->name('add-to-cart');
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');
 
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
