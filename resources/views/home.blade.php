@@ -78,7 +78,6 @@
 </section>
 @endsection
 
-
 @section('content')
 <section class="bg-black py-6">
     <div class="container mx-auto px-">
@@ -152,10 +151,6 @@
 
     </div>
 </section>
-
-
-
-
 <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
         <h2 class="text-2xl sm:text-4xl font-extrabold text-center mb-10">NEW ARRIVALS</h2>
@@ -362,12 +357,7 @@
     </div>
 </section>
 
-
-
 @endsection
-
-
-
 
 @section('javascript')
 <script type="module">
@@ -393,9 +383,6 @@
         current = (current - 1 + slides.length) % slides.length;
         updateSlides();
     });
-
-
- 
 
 $(document).ready(function () {
     $('.autoplay').slick({

@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\CheckUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomePageUserController;
+use App\Http\Controllers\Product\CategoryController;
+use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\UserDashboardController;
 
-Route::get('/', [HomePageUserController::class , 'getUserDetails'])->name('home');
+Route::get('/', [HomePageUserController::class, 'getUserDetails'])->name('home');
 
 Route::get('/product', function () {
     return view('product');
@@ -23,7 +25,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-   Route::get('dashboard', [DashboardController::class , 'getUserDetails'])->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'getUserDetails'])->name('dashboard');
+    Route::get('admin/add-product', [ProductController::class, 'showAddProductForm'])->name('add-product');
+    Route::post('admin/add-product', [ProductController::class, 'addProduct'])->name('add-prodcut');
+    Route::get('admin/add-category', [CategoryController::class, 'addCategory'])->name('add-category');
+    Route::post('admin/add-category', [CategoryController::class, 'storeCategory'])->name('add-category');
+    Route::get('admin/categories', [CategoryController::class, 'index'])->name('category-list');
+    Route::get('admin/category/edit/{slug}', [CategoryController::class, 'edit'])->name('edit-category');
+    Route::post('admin/category/update/{id}', [CategoryController::class, 'update'])->name('update-category');
 });
 
 Route::middleware('auth')->group(function () {
@@ -45,4 +54,4 @@ Route::post('/check-username', [CheckUserController::class, 'checkUsername'])->n
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

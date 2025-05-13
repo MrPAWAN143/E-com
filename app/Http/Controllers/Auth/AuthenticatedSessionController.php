@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
 
     $user = Auth::user(); // Get the authenticated user
 
-    if ($user->user_type === 'admin') {
+    if ($user->user_type === 'admin' || $user->user_type === 'super_admin') {
         return redirect()->intended(route('dashboard', absolute: false));
     } else {
         return redirect()->intended(route('home', absolute: false));
@@ -48,6 +48,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

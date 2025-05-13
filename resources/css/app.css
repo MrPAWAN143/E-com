@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @theme {
 	--color-primary: #F2DFCE;
 	--color-secondary: #f2f2f2;

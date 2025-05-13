@@ -10,7 +10,7 @@ class DashboardController extends Controller
     public function getUserDetails(Request $request)
     {
         $user = $request->user();
-        if ($user->user_type === 'admin') {
+        if ($user->user_type === 'admin' || $user->user_type == 'super_admin') {
             $user = [
                 'name' => $user->name,
                 'email' => $user->email,
