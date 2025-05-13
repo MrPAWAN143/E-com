@@ -4,7 +4,7 @@
       <!-- Logo -->
       <div class="text-2xl font-bold flex items-center space-x-2">
          <!-- <img src="{{asset('assets/logo/logo.png')}}" alt="logo" class="h-auto w-20"> -->
-         <span>LUXEMART</span>
+         <a href="{{route('dashboard')}}"> <span>LUXEMART</span></a>
       </div>
 
       <!-- Search Docs Section -->
@@ -41,6 +41,57 @@
 
             <div id="ecomMenu" class="ml-4 mt-2 hidden space-y-1">
 
+               <!-- Super admin Submenu -->
+
+               @if(auth()->user()->user_type == 'super_admin')
+               <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-700 rounded toggle-group" data-target="#superAdmin">
+                  <span>Super Admin</span>
+                  <svg class="w-4 h-4 transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+               </button>
+               <div id="superAdmin" class="ml-4 mt-1 hidden space-y-1">
+                  <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-500 rounded toggle-group" data-target="#vendor">
+                     <span>Vendors</span>
+                     <svg class="w-4 h-4 transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </button>
+
+                  <div id="vendor" class="ml-4 mt-1 hidden space-y-1">
+                       <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Vendor Request List</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">All Vendor</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Active Vendor</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Inactive Vendor</a>
+                  </div>
+                  <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-500 rounded toggle-group" data-target="#users">
+                     <span>Users</span>
+                     <svg class="w-4 h-4 transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </button>
+
+                  <div id="users" class="ml-4 mt-1 hidden space-y-1">
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">All Users</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Active Users</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Inactive Users</a>
+                  </div>
+
+                  <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-500 rounded toggle-group" data-target="#category">
+                     <span>Category</span>
+                     <svg class="w-4 h-4 transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </button>
+
+                  <div id="category" class="ml-4 mt-1 hidden space-y-1">
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Add Category</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Update Category</a>
+                     <a href="{{route('category-list')}}" class="block py-1 text-sm hover:underline">List Category</a>
+                  </div>
+               </div>
+               @endif
+
                <!-- Admin Submenu -->
                <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-700 rounded toggle-group" data-target="#adminMenu">
                   <span>Admin</span>
@@ -49,7 +100,7 @@
                   </svg>
                </button>
                <div id="adminMenu" class="ml-4 mt-1 hidden space-y-1">
-                  <a href="#" class="block py-1 text-sm hover:underline">Product listing</a>
+                  <a href="{{route('add-product')}}" class="block py-1 text-sm hover:underline">Product listing</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Product list</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Order list</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Order</a>
@@ -57,8 +108,8 @@
                   <a href="#" class="block py-1 text-sm hover:underline">Refund</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Invoice list</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Invoice</a>
-               </div>
 
+               </div>
                <!-- Customer Submenu -->
                <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-700 rounded toggle-group" data-target="#customerMenu">
                   <span>Customer</span>
