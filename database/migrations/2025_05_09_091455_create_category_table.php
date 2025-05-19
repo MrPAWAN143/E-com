@@ -30,7 +30,7 @@ return new class extends Migration
             $table->boolean('is_onsale')->default(false);
             $table->boolean('is_discount')->default(false);
             $table->boolean('is_featured_category')->default(false);
-            $table->foreignId('parent_id')->nullable()->constrained('category')->onDelete('cascade');
+            $table->foreignId('parent_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

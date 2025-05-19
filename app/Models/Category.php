@@ -16,6 +16,7 @@ class Category extends Model
         'meta_description',
         'meta_keywords',
         'image',
-        'description'
+        'description',
+        'parent_id'
     ];
 }

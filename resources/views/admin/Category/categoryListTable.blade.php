@@ -30,6 +30,7 @@
                         <th class="px-6 py-3">Meta Keywords</th>
                         <th class="px-6 py-3">Description</th>
                         <th class="px-6 py-3 text-right">Edit</th>
+                        <th class="px-6 py-3 text-right">Status</th>
                     </tr>
                 </thead>
                 <tbody id="category-table-body">
