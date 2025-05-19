@@ -9,7 +9,7 @@
 </head>
 <body>
 <section class="bg-gray-50 dark:bg-gray-900">
-  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+  <div class="flex flex-col items-center justify-center px-6 py-4 mx-auto md:h-screen lg:py-0">
       <a href="#" class="flex items-center mb-0 text-2xl font-semibold text-gray-900 dark:text-white">
           <img class="w-32 h-auto mr-2" src="{{asset('assets/logo/logo.png')}}" alt="logo">
     
@@ -19,8 +19,9 @@
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Sign in to your account
               </h1>
-              <form class="space-y-4 md:space-y-6" action="{{route('login')}}" method="POST">
-                  @csrf
+              <p class=" msg"></p>
+              <form class="space-y-4 md:space-y-6 loginAction">
+               
                   <div>
                       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                       <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="">
@@ -49,5 +50,49 @@
       </div>
   </div>
 </section>
+
+
+<script type="module">
+$(document).ready(function() {
+    $('.loginAction').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+
+        $.ajax({
+            type: 'POST',
+            url: url.login, // Make sure this matches your Laravel route
+            data: formData,
+            contentType: false,
+            processData: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                if (response.status === 'success') {
+                    $('.msg').text(`${response.message}, ${response.user.name}`).removeClass('text-red-600').addClass('text-green-600');
+
+                    window.location.href = response.redirect;
+                } else {
+                    $('.msg').text(response.message || 'Login failed.').removeClass('text-green-600').addClass('text-red-600');
+                }
+            },
+            error: function(xhr) {
+                let res = xhr.responseJSON;
+                if (res && res.errors) {
+                    // Display Laravel validation errors
+                    let messages = Object.values(res.errors).flat().join('\n');
+                    $('.msg').text(messages).removeClass('text-green-600').addClass('text-red-600');
+                } else {
+                    $('.msg').text('An error occurred. Please try again.').removeClass('text-green-600').addClass('text-red-600');
+                }
+            }
+        });
+    });
+});
+
+let url = {
+    login: "{{ route('login') }}",
+}
+</script>
 </body>
 </html>

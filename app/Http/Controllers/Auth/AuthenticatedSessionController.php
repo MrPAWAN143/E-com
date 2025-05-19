@@ -23,19 +23,33 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+   public function store(LoginRequest $request)
 {
     $request->authenticate();
     $request->session()->regenerate();
 
-    $user = Auth::user(); // Get the authenticated user
+    $user = Auth::user();
 
+    if ($request->ajax()) {
+        // Send JSON response to AJAX call
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Login successful',
+            'user' => $user,
+            'redirect' => ($user->user_type === 'admin' || $user->user_type === 'super_admin')
+                ? route('dashboard')
+                : route('home')
+        ]);
+    }
+
+    // Fallback for normal (non-AJAX) form submission
     if ($user->user_type === 'admin' || $user->user_type === 'super_admin') {
         return redirect()->intended(route('dashboard', absolute: false));
     } else {
         return redirect()->intended(route('home', absolute: false));
     }
 }
+
 
     /**
      * Destroy an authenticated session.

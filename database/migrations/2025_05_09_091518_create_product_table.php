@@ -35,6 +35,7 @@ return new class extends Migration
             $table->integer('quantity')->nullable();
             $table->foreignId('category_id')->constrained('category')->onDelete('cascade');
             $table->foreignId('sub_category_id')->constrained('sub_category')->onDelete('cascade');
+            $table->foreignId('parent_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
