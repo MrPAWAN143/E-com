@@ -3,19 +3,10 @@
 @section('title' , "Product List" )
 
 @section('showForm')
-<section class="container bg-white dark:bg-gray-900 px-4 py-8 mx-auto ">
-    <div class="mb-6 flex justify-between items-center">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Add Product</h2>
-        <a href="" class="inline-flex items-center text-blue-600 dark:text-blue-500 hover:underline font-medium">
-            Product List
-            <svg class="w-4 h-4 ml-2 rtl:rotate-180" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
-        </a>
-    </div>
-    <form id="addProduct" method="post" enctype="multipart/form-data">
-      @csrf
+<section class="container bg-white dark:bg-gray-900">
+  <div class="py-2 px-4 mx-auto  lg:py-2">
+    <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Add a new product</h2>
+    <form action="#">
       <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
         <div class="w-full">
           <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
@@ -28,19 +19,21 @@
         <div>
           <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
           <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-           <option value="">Select Category</option>
-           @foreach($category as $cat)
-           <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-           @endforeach
+            <option selected="">Select category</option>
+            <option value="TV">TV/Monitors</option>
+            <option value="PC">PC</option>
+            <option value="GA">Gaming/Console</option>
+            <option value="PH">Phones</option>
           </select>
         </div>
         <div>
           <label for="sub_category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sub Category</label>
           <select id="sub_category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-            <option value="">Select Sub Category</option>
-           @foreach($subCategory as $subcat)
-           <option value="{{ $subcat->id }}">{{ $subcat->name }}</option>
-           @endforeach
+            <option selected="">Select category</option>
+            <option value="TV">TV/Monitors</option>
+            <option value="PC">PC</option>
+            <option value="GA">Gaming/Console</option>
+            <option value="PH">Phones</option>
           </select>
         </div>
         <div>
@@ -68,18 +61,18 @@
           <input type="text" name="meta_keyword" id="meta_keyword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Meta Decription">
         </div>
         <div class="sm:col-span-2">
-          <div class="flex items-center justify-center w-full">
-            <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 ">
-              <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                </svg>
-                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, WEBP</p>
-              </div>
-              <input id="dropzone-file" type="file" class="hidden" />
-            </label>
-          </div>
+        <div class="flex items-center justify-center w-full">
+          <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 ">
+            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+              <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+              </svg>
+              <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPG, WEBP</p>
+            </div>
+            <input id="dropzone-file" type="file" class="hidden" />
+          </label>
+        </div>
         </div>
 
         <div class="sm:col-span-2">
@@ -93,25 +86,15 @@
     </form>
   </div>
 </section>
+
+
+
+
 @endsection
 
 
 @section('javascript')
-
 <script type="module">
   CKEDITOR.replace('ckeditor');
-
-  $(document).ready(function() {
-
-    $('#addProduct').on('submit', function(e) {
-      e.preventDefault()
-
-      let formData = new FormData(this)
-
-      console.log(formData);
-
-
-    })
-  })
 </script>
 @endsection

@@ -13,10 +13,10 @@
                     <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
-                </a>
-            </p>
+                </a></p>
+
         </div>
-        <form class="addCategory" enctype="multipart/form-data">
+        <form action="#" class="addCategory" enctype="multipart/form-data">
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div class="w-full">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category Name</label>
@@ -95,12 +95,13 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             data: formData,
+            description,
             success: function(response) {
 
-                let status = response.status;
+                let title = response.status;
                 let message = response.message
-                if (status == 'Success') {
-                    $('#messageTitle').text(status).addClass('text-green-600');
+                if (title == 'Success') {
+                    $('#messageTitle').text(title).addClass('text-green-600');
                     $('#messageContent').text(message);
                     $('#messageModal').removeClass('hidden');
                 }
@@ -108,11 +109,12 @@
                 $('.loaderBtn').hide();
                 form.reset();
 
-                window.location = "{{ route('category-list') }}";
+              window.location = "{{ route('category-list') }}";
 
 
             },
             error: function(err) {
+                console.log();
                 let error = err.responseJSON.errors;
 
                 $.each(error, (field, message) => {

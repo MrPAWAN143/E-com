@@ -72,9 +72,9 @@
                   </button>
 
                   <div id="users" class="ml-4 mt-1 hidden space-y-1">
-                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">All User</a>
-                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Active User</a>
-                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Inactive User</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">All Users</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Active Users</a>
+                     <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Inactive Users</a>
                   </div>
 
                   <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-500 rounded toggle-group" data-target="#category">
@@ -100,9 +100,8 @@
                   </svg>
                </button>
                <div id="adminMenu" class="ml-4 mt-1 hidden space-y-1">
-                  <a href="{{route('add-product')}}" class="block py-1 text-sm hover:underline">Add Product</a>
+                  <a href="{{route('add-product')}}" class="block py-1 text-sm hover:underline">Product listing</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Product list</a>
-                  <a href="{{route('add_SubCategory')}}" class="block py-1 text-sm hover:underline">Add Subcategory</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Order list</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Order</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Create order</a>
