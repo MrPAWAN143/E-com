@@ -89,6 +89,22 @@
                      <a href="{{route('add-category')}}" class="block py-1 text-sm hover:underline">Update Category</a>
                      <a href="{{route('category-list')}}" class="block py-1 text-sm hover:underline">List Category</a>
                   </div>
+
+
+
+                  
+                  <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-500 rounded toggle-group" data-target="#subcategory">
+                     <span>Sub Category</span>
+                     <svg class="w-4 h-4 transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                     </svg>
+                  </button>
+
+                  <div id="subcategory" class="ml-4 mt-1 hidden space-y-1">
+                     <a href="{{route('super.add_SubCategory')}}" class="block py-1 text-sm hover:underline">Add Sub Category</a>
+                     <a href="" class="block py-1 text-sm hover:underline">Update Sub Category</a>
+                     <a href="" class="block py-1 text-sm hover:underline">List Sub Category</a>
+                  </div>
                </div>
                @endif
 

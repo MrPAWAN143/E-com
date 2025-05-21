@@ -31,7 +31,7 @@ return new class extends Migration
             $table->boolean('is_discount')->default(false);
             $table->decimal('price', 10, 2)->nullable();
             $table->decimal('discount_price', 10, 2)->nullable();
-            $table->integer('stock')->nullable();
+            $table->string('stock')->default('In Stock');
             $table->integer('quantity')->nullable();
             $table->foreignId('category_id')->constrained('category')->onDelete('cascade');
             $table->foreignId('sub_category_id')->constrained('sub_category')->onDelete('cascade');

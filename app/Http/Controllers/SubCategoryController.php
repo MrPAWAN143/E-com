@@ -64,4 +64,14 @@ class SubCategoryController extends Controller
             }
         }
     }
+
+    
+    public function getSubcategories($category_id)
+    {
+
+
+        $subcategories = SubCategory::where('category_id', $category_id)->get();
+
+        return response()->json($subcategories);
+    }
 }
