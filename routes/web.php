@@ -28,16 +28,23 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'getUserDetails'])->name('dashboard');
     Route::get('admin/add-product', [ProductController::class, 'showAddProductForm'])->name('add-product');
-    Route::post('admin/add-product', [ProductController::class, 'addProduct'])->name('add-prodcut');
     Route::get('super_admin/add-category', [CategoryController::class, 'addCategory'])->name('add-category');
     Route::post('super_admin/add-category', [CategoryController::class, 'storeCategory'])->name('add-category');
     Route::get('super_admin/categories', [CategoryController::class, 'index'])->name('category-list');
     Route::get('super_admin/category/edit/{slug}', [CategoryController::class, 'edit'])->name('edit-category');
     Route::post('super_admin/category/update/{id}', [CategoryController::class, 'update'])->name('update-category');
-    // Route::get('super_admin/add-subcategory', [SubCategoryController::class, 'addSubCategory'])->name('add_SubCategory');
+    Route::get('super-admin/add-subcategory', [SubCategoryController::class, 'addSubCategory'])->name('super.add_SubCategory');
     Route::get('admin/add-subcategory', [SubCategoryController::class, 'addSubCategory'])->name('add_SubCategory');
-    // Route::post('super_admin/add-subcategory', [SubCategoryController::class, 'storeSubCategory'])->name('add_SubCategory');
+    Route::post('super-admin/add-subcategory', [SubCategoryController::class, 'storeSubCategory'])->name('add_SubCategory');
     Route::post('admin/add-subcategory', [SubCategoryController::class, 'storeSubCategory'])->name('add_SubCategory');
+    Route::get('/get-subcategories/{category_id}', [SubCategoryController::class, 'getSubcategories'])->name('get.subcategories');
+
+});
+
+
+Route::middleware('auth')->group(function () {
+   Route::post('admin/add-product', [ProductController::class, 'addProduct'])->name('admin.addProduct');
+
 });
 
 Route::middleware('auth')->group(function () {

@@ -91,63 +91,20 @@
     </div>
 </section>
 <section class="container mx-auto pt-12 bg-white text-center">
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 px-4">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4">
 
-        <!-- Men (With Link) -->
+        @foreach ($categories as $category)
         <a href="">
             <div class="relative group cursor-pointer">
                 <div class="overflow-hidden rounded-2xl shadow-lg flex items-start justify-center">
-                    <img src="{{asset('assets/images/categories/men.jpg')}}" alt="Men"
+                    <img src="{{ asset($category->image) }}" alt="{{ $category->name }}"
                         class="w-full h-32 object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
-                <p class="mt-2 text-lg font-medium">Men</p>
+                <p class="mt-2 text-lg font-medium">{{ $category->name }}</p>
             </div>
         </a>
+        @endforeach
 
-        <!-- Women -->
-        <div class="relative group cursor-pointer">
-            <div class="overflow-hidden rounded-2xl shadow-lg">
-                <img src="{{asset('assets/images/categories/women.jpg')}}" alt="Women"
-                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-            </div>
-            <p class="mt-2 text-lg font-medium">Women</p>
-        </div>
-
-        <!-- Kids -->
-        <div class="relative group cursor-pointer">
-            <div class="overflow-hidden rounded-2xl shadow-lg">
-                <img src="{{asset('assets/images/categories/kids.jpg')}}" alt="Kids"
-                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-            </div>
-            <p class="mt-2 text-lg font-medium">Kids</p>
-        </div>
-
-        <!-- Ethnic -->
-        <div class="relative group cursor-pointer">
-            <div class="overflow-hidden rounded-2xl shadow-lg">
-                <img src="{{asset('assets/images/categories/ethnic.jpg')}}" alt="Ethnic"
-                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-            </div>
-            <p class="mt-2 text-lg font-medium">Ethnic</p>
-        </div>
-
-        <!-- Sports -->
-        <div class="relative group cursor-pointer">
-            <div class="overflow-hidden rounded-2xl shadow-lg">
-                <img src="{{asset('assets/images/categories/sport.jpg')}}" alt="Sports"
-                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-            </div>
-            <p class="mt-2 text-lg font-medium">Sports</p>
-        </div>
-
-        <!-- Accessories -->
-        <div class="relative group cursor-pointer">
-            <div class="overflow-hidden rounded-2xl shadow-lg">
-                <img src="{{asset('assets/images/categories/Accessories.jpg')}}" alt="Accessories"
-                    class="w-full h-32 object-cover opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
-            </div>
-            <p class="mt-2 text-lg font-medium">Accessories</p>
-        </div>
 
     </div>
 </section>
@@ -384,33 +341,32 @@
         updateSlides();
     });
 
-$(document).ready(function () {
-    $('.autoplay').slick({
-        dots: false,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: true,
-        prevArrow: $('.prev-slide'),
-        nextArrow: $('.next-slide'),
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
+    $(document).ready(function() {
+        $('.autoplay').slick({
+            dots: false,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: true,
+            prevArrow: $('.prev-slide'),
+            nextArrow: $('.next-slide'),
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 640,
+                    settings: {
+                        slidesToShow: 1,
+                    }
                 }
-            },
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                }
-            }
-        ]
+            ]
+        });
     });
-});
 </script>
 
 @endsection

@@ -140,6 +140,7 @@
                 $('.container').show();
                 $('.loaderBtn').hide();
                 form.reset();
+                discription = '';
 
             },
             error: function(err) {
