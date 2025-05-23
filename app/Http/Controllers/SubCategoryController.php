@@ -15,7 +15,7 @@ class SubCategoryController extends Controller
     public function addSubCategory(Request $request)
     {
         $user = $request->user();
-        if ($user->user_type == 'super_admin' || $user->user_type == 'admin') {
+        if ($user->user_type == 'super_admin') {
             $categories = Category::get();
             return view('admin.subCategory.subCategoryListForm', compact('categories'));
         }
@@ -26,7 +26,7 @@ class SubCategoryController extends Controller
     {
 
         $user = $request->user();
-        if ($user->user_type == 'super_admin' || $user->user_type == 'admin') {
+        if ($user->user_type == 'super_admin') {
             $validated =  $request->validate([
                 'name' => 'required|string|max:255',
                 'slug' => 'nullable|string|max:255|unique:sub_category,slug',

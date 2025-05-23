@@ -6,7 +6,7 @@
 <section class="container bg-white dark:bg-gray-900 px-4 py-8 mx-auto ">
   <div class="mb-6 flex justify-between items-center">
     <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Add Product</h2>
-    <a href="" class="inline-flex items-center text-blue-600 dark:text-blue-500 hover:underline font-medium">
+    <a href="{{route('product-list')}}" class="inline-flex items-center text-blue-600 dark:text-blue-500 hover:underline font-medium">
       Product List
       <svg class="w-4 h-4 ml-2 rtl:rotate-180" fill="none" viewBox="0 0 14 10">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -17,8 +17,8 @@
   <form id="addProduct" method="post" enctype="multipart/form-data">
     <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
       <div class="w-full">
-        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
-        <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
+        <label for="product_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
+        <input type="text" name="product_name" id="product_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
       </div>
       <div class="w-full">
         <label for="slug" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Slug</label>
@@ -61,8 +61,20 @@
         <input type="text" name="meta_description" id="meta_description" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Meta Decription">
       </div>
       <div class="w-full">
-        <label for="meta_keyword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Meta Keyword</label>
-        <input type="text" name="meta_keyword" id="meta_keyword" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Meta Decription">
+        <label for="meta_keywords" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Meta Keyword</label>
+        <input type="text" name="meta_keywords" id="meta_keywords" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Meta Decription">
+      </div>
+      <div>
+        <label for="is_active" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Status</label>
+        <select id="is_active" name="is_active" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+          <option value="">Select Status</option>
+          <option value="1">Active</option>
+          <option value="0">Inactive</option>
+        </select>
+      </div>
+      <div>
+        <label for="featured_image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Featured Image</label>
+        <input type="file" name="featured_image" id="featured_image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name">
       </div>
       <div class="sm:col-span-2">
         <div class="flex items-center justify-center w-full">
@@ -96,7 +108,9 @@
 @section('javascript')
 <script>
   window.url = {
-        addProduct: "{{ route('admin.addProduct') }}"
+        addProduct: "{{ route('admin.addProduct') }}",
+        productList: "{{ route('product-list') }}",
+
     };
 </script>
 <script src="{{ asset('assets/js/product.js') }}" type="module"></script>

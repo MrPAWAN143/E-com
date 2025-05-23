@@ -14,9 +14,11 @@
     <td class="px-6 py-4">{{ $cat->meta_description }}</td>
     <td class="px-6 py-4">{{ $cat->meta_keywords }}</td>
     <td class="px-6 py-4">-</td>
+    @if(Auth::user()->user_type == 'super_admin')
     <td class="px-6 py-4 text-right">
         <a href="{{route('edit-category' , $cat->slug)}}" class="text-blue-600 hover:underline">Edit</a>
     </td>
+    @endif
     <td class="px-6 py-4 text-right">
         @if ($cat->is_active === 1)
         <button class="px-3 py-1 text-sm font-medium text-green-700 bg-green-100 rounded hover:bg-green-200">

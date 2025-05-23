@@ -107,7 +107,18 @@
                   </div>
                </div>
                @endif
-
+                  
+               @if(auth()->user()->user_type == 'admin')
+               <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-700 rounded toggle-group" data-target="#categoryMenu">
+                  <span>Category</span>
+                  <svg class="w-4 h-4 transition-transform transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+               </button>
+               <div id="categoryMenu" class="ml-4 mt-1 hidden space-y-1">
+                  <a href="{{route('category-list')}}" class="block py-1 text-sm hover:underline">Category List</a>
+               </div>
+            @endif
                <!-- Admin Submenu -->
                <button class="w-full flex items-center justify-between px-2 py-1 bg-gray-700 rounded toggle-group" data-target="#adminMenu">
                   <span>Admin</span>
@@ -117,8 +128,7 @@
                </button>
                <div id="adminMenu" class="ml-4 mt-1 hidden space-y-1">
                   <a href="{{route('add-product')}}" class="block py-1 text-sm hover:underline">Add Product</a>
-                  <a href="#" class="block py-1 text-sm hover:underline">Product list</a>
-                  <a href="{{route('add_SubCategory')}}" class="block py-1 text-sm hover:underline">Add Subcategory</a>
+                  <a href="{{route('product-list')}}" class="block py-1 text-sm hover:underline">Product list</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Order list</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Order</a>
                   <a href="#" class="block py-1 text-sm hover:underline">Create order</a>

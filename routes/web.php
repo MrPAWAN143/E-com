@@ -27,10 +27,10 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'getUserDetails'])->name('dashboard');
-    Route::get('admin/add-product', [ProductController::class, 'showAddProductForm'])->name('add-product');
     Route::get('super_admin/add-category', [CategoryController::class, 'addCategory'])->name('add-category');
     Route::post('super_admin/add-category', [CategoryController::class, 'storeCategory'])->name('add-category');
     Route::get('super_admin/categories', [CategoryController::class, 'index'])->name('category-list');
+    Route::get('admin/categories', [CategoryController::class, 'index'])->name('category-list');
     Route::get('super_admin/category/edit/{slug}', [CategoryController::class, 'edit'])->name('edit-category');
     Route::post('super_admin/category/update/{id}', [CategoryController::class, 'update'])->name('update-category');
     Route::get('super-admin/add-subcategory', [SubCategoryController::class, 'addSubCategory'])->name('super.add_SubCategory');
@@ -43,7 +43,13 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
+      Route::get('admin/add-product', [ProductController::class, 'showAddProductForm'])->name('add-product');
    Route::post('admin/add-product', [ProductController::class, 'addProduct'])->name('admin.addProduct');
+    Route::get('admin/product-list', [ProductController::class, 'productList'])->name('product-list');
+    Route::get('admin/product/edit/{slug}', [ProductController::class, 'editProduct'])->name('edit-product');
+    Route::post('admin/product/update/{id}', [ProductController::class, 'updateProduct'])->name('update-product');
+    Route::post('admin/product-list', [ProductController::class, 'productList'])->name('dataCount');
+    Route::post('admin/toggle-product-status', [ProductController::class, 'toggleProductStatus'])->name('toggle-product-status');
 
 });
 

@@ -1,56 +1,9 @@
 @extends('admin.layouts.app')
-
 @section('title' , "Product List" )
-
 @section('showForm')
-<!-- <section class="container bg-white dark:bg-gray-900">
-    <div class="py-2 px-4 mx-auto  lg:py-2">
-        <div class="flex justify-between items-center">
-            <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Category List</h2>
-
-            <p class="text-gray-500 dark:text-gray-400"> <a href="{{route('add-category')}}" class="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                   Add Category
-                    <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </a></p>
-
-        </div>
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                    <tr>
-                        <th class="px-6 py-3">ID</th>
-                        <th class="px-6 py-3">Name</th>
-                        <th class="px-6 py-3">Slug</th>
-                        <th class="px-6 py-3">Image</th>
-                        <th class="px-6 py-3">Meta Title</th>
-                        <th class="px-6 py-3">Meta Description</th>
-                        <th class="px-6 py-3">Meta Keywords</th>
-                        <th class="px-6 py-3">Description</th>
-                        <th class="px-6 py-3 text-right">Edit</th>
-                        <th class="px-6 py-3 text-right">Status</th>
-                    </tr>
-                </thead>
-                <tbody id="category-table-body">
-                    @include('admin.partials.categoryRows')
-                </tbody>
-            </table> 
-
-            <div class="text-center mt-4">
-                <button id="load-more-btn" class="px-4 py-2 bg-blue-600 text-white rounded">Show More</button>
-                <p class="mt-2 text-gray-500">Total Categories: {{ $totalCategories }}</p>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-
 <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-0">
     <div class="mx-auto ">
-        <!-- Start coding here -->
-        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+        <div class="bg-white dark:bg-gray-800 z-0 relative shadow-md sm:rounded-lg overflow-hidden">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                 <div class="w-full md:w-1/2">
                     <form class="flex items-center">
@@ -67,14 +20,12 @@
                     </form>
                 </div>
                 <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    @if(Auth::user()->user_type == 'super_admin')
-                    <a href="{{ route('add-category') }}" class="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                    <a href="{{ route('add-product') }}" class="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
                         <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                         </svg>
-                        Add Category
+                        Add product
                     </a>
-                    @endif
                     <div class="flex items-center space-x-3 w-full md:w-auto">
                         <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
                             <svg class="-ml-1 mr-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -136,33 +87,50 @@
                             <th class="px-6 py-3">ID</th>
                             <th class="px-6 py-3">Name</th>
                             <th class="px-6 py-3">Slug</th>
-                            <th class="px-6 py-3">Image</th>
+                            <th class="px-6 py-3">Featured Image</th>
                             <th class="px-6 py-3">Meta Title</th>
                             <th class="px-6 py-3">Meta Description</th>
                             <th class="px-6 py-3">Meta Keywords</th>
-                            <th class="px-6 py-3">Description</th>
-                            @if(Auth::user()->user_type == 'super_admin')
-                            <th class="px-6 py-3 text-right">Edit</th>
+                           @if (auth()->user()->user_type === 'super_admin')
+                            <th class="px-6 py-3">Posted User</th>
                             @endif
+                            <th class="px-6 py-3 text-right">Actions</th>
                             <th class="px-6 py-3 text-right">Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @include('admin.partials.categoryRows')
+                        @include('admin.partials.productRows')
                     </tbody>
                 </table>
             </div>
             <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
                 <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
                     Showing
-                    <span class="font-semibold text-gray-900 dark:text-white">{{ $categories->firstItem() }}</span>
+                    <span class="font-semibold text-gray-900 dark:text-white">{{ $products->firstItem() }}</span>
                     to
-                    <span class="font-semibold text-gray-900 dark:text-white">{{ $categories->lastItem() }}</span>
+                    <span class="font-semibold text-gray-900 dark:text-white">{{ $products->lastItem() }}</span>
                     of
-                    <span class="font-semibold text-gray-900 dark:text-white">{{ $categories->total() }}</span>
+                    <span class="font-semibold text-gray-900 dark:text-white">{{ $products->total() }}</span>
+                    <div class="inline-flex items-center ms-4">
+                        <label for="DataCount" class="sr-only">Select number of items to show</label>
+                        <select name="dataCount" id="DataCount"
+                            class="w-16 h-8 text-sm text-gray-500 bg-white border border-gray-300 rounded-lg
+               focus:ring-primary-500 focus:border-primary-500
+               dark:bg-gray-700 dark:border-gray-600 dark:text-white
+               dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option value="10" {{ request('dataCount') == 10 ? 'selected' : '' }}>10</option>
+                            <option value="25" {{ request('dataCount') == 25 ? 'selected' : '' }}>25</option>
+                            <option value="50" {{ request('dataCount') == 50 ? 'selected' : '' }}>50</option>
+                            <option value="100" {{ request('dataCount') == 100 ? 'selected' : '' }}>100</option>
+                            <option value="200" {{ request('dataCount') == 200 ? 'selected' : '' }}>200</option>
+                        </select>
+                    </div>
+
                 </span>
+
+
                 <ul class="inline-flex items-stretch -space-x-px">
-                    @if ($categories->onFirstPage())
+                    @if ($products->onFirstPage())
                     <li>
                         <span class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-400 bg-white rounded-l-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -172,7 +140,7 @@
                     </li>
                     @else
                     <li>
-                        <a href="{{ $categories->previousPageUrl() }}" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 hover:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <a href="{{ $products->previousPageUrl() }}" class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 hover:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-white">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
@@ -180,9 +148,8 @@
                     </li>
                     @endif
 
-                    {{-- Page Numbers --}}
-                    @for ($i = 1; $i <= $categories->lastPage(); $i++)
-                        @if ($i == $categories->currentPage())
+                    @for ($i = 1; $i <= $products->lastPage(); $i++)
+                        @if ($i == $products->currentPage())
                         <li>
                             <span class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white">
                                 {{ $i }}
@@ -190,17 +157,19 @@
                         </li>
                         @else
                         <li>
-                            <a href="{{ $categories->url($i) }}" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <a href="{{ $products->url($i) }}" class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                 {{ $i }}
                             </a>
                         </li>
                         @endif
                         @endfor
 
+
+
                         {{-- Next Page --}}
-                        @if ($categories->hasMorePages())
+                        @if ($products->hasMorePages())
                         <li>
-                            <a href="{{ $categories->nextPageUrl() }}" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 hover:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <a href="{{ $products->nextPageUrl() }}" class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 hover:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
@@ -220,42 +189,125 @@
             </nav>
         </div>
     </div>
+
+    <!-- Password Input Section (Initially Hidden) -->
+    <div id="passwordSection" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+            <h2 class="text-lg font-semibold mb-4">Confirm Your Admin Password</h2>
+            <input type="hidden" id="productIdToToggle">
+            <input type="password" id="passwordInput"
+                class="w-full px-3 py-2 border border-gray-300 rounded mb-4"
+                placeholder="Your password">
+            <div class="flex justify-end gap-2">
+                <button id="cancelBtn" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Cancel</button>
+                <button id="submitPasswordBtn" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Confirm</button>
+            </div>
+        </div>
+    </div>
+
 </section>
-
 @endsection
-
 
 @section('javascript')
 <script type="module">
-    let page = 1;
-    let totalLoaded = "{{ $categories->count() }}";
-    let totalCategories = " {{ $totalCategories }}";
-
     $('#load-more-btn').on('click', function() {
+        const $btn = $(this);
+        $btn.prop('disabled', true).text('Loading...');
+
         page++;
-        $(this).text('Loading...').prop('disabled', true);
         $.ajax({
             url: `?page=${page}`,
             type: 'GET',
             dataType: 'html',
             success: function(data) {
                 if ($.trim(data) === '') {
-                    $('#load-more-btn').text('No More Categories').prop('disabled', true);
+                    $btn.text('No More Products');
                     return;
                 }
-                $('#category-table-body').append(data);
+                $('#product-table-body').append(data);
                 totalLoaded += 10;
-                if (totalLoaded >= totalCategories) {
-                    $('#load-more-btn').text('No More Categories').prop('disabled', true);
+                if (totalLoaded >= totalProducts) {
+                    $btn.text('No More Products');
+                } else {
+                    $btn.prop('disabled', false).text('Show More');
                 }
             },
             error: function() {
-                alert('Failed to load more categories.');
+                alert('Failed to load more products.');
+                $btn.prop('disabled', false).text('Show More');
             }
         });
     });
-    const url = {
-        // addCategory: "{{route('add-category')}}"
-    }
+
+
+    $('#DataCount').on('change', function() {
+        const selectedValue = $(this).val()
+        const url = new URL(window.location.href);
+        url.searchParams.set('dataCount', selectedValue);
+        window.location.href = url.toString();
+    });
+
+
+    $('.statusBtn').on('click', function() {
+        const productId = $(this).data('product-id');
+        $('#productIdToToggle').val(productId);
+        $('#passwordInput').val('');
+        $('#passwordSection').removeClass('hidden').addClass('flex');
+    });
+    $('#cancelBtn').on('click', function() {
+        $('#passwordSection').addClass('hidden').removeClass('flex');
+    });
+    $('#submitPasswordBtn').on('click', function() {
+        $('.container').hide();
+        $('.loaderBtn').show();
+        const password = $('#passwordInput').val();
+        const productId = $('#productIdToToggle').val();
+        
+        if (!password) {
+            alert('Please enter your password.');
+            return;
+        }
+
+        $.ajax({
+            url: "{{ route('toggle-product-status') }}",
+            method: 'POST',
+            data: {
+                id: productId,
+                password: password,
+               
+            },
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                let title = response.status;
+                let message = response.message
+                if (response.status === 'Success') {
+                    $('#messageTitle').text(title).addClass('text-green-600').removeClass('text-red-600');
+                    $('#messageContent').text(message);
+                    $('#messageModal').removeClass('hidden');
+                } else if (response.status === 'Error') {
+                    $('#messageTitle').text(title).addClass('text-red-600');
+                    $('#messageContent').text(message);
+                    $('#messageModal').removeClass('hidden');
+                }
+                $('.container').show();
+                $('.loaderBtn').hide();
+                location.reload();
+            },
+            error: function(err) {
+                let error = err.responseJSON;
+                $('#messageTitle').text(error.status).addClass('text-red-600').removeClass('text-green-600');
+                $('#messageContent').text(error.message);
+                $('#messageModal').removeClass('hidden');
+                $('.container').show();
+                $('.loaderBtn').hide();
+            }
+        });
+
+        // Hide modal after submit
+        $('#passwordSection').addClass('hidden').removeClass('flex');
+    });
 </script>
+
 @endsection

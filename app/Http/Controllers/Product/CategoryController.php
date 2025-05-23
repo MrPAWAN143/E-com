@@ -73,21 +73,27 @@ class CategoryController extends Controller
 
     public function index(Request $request)
     {
-        $user = Auth::user();
 
-        if ($user->user_type == 'super_admin') {
-          
+        $user = Auth::user();
         $perPage = 10;
-        $page = $request->get('page', 1);
-        $categories = Category::orderBy('id', 'desc')->skip(($page - 1) * $perPage)->take($perPage)->get();
-        $totalCategories = Category::count();
+        if ($user->user_type === 'admin') {
+            $categories = Category::orderBy('created_at', 'desc')->paginate($perPage);
+
+            $totalCategories = Category::where('parent_id', $user->id)->count();
+        } elseif ($user->user_type === 'super_admin') {
+            $categories = Category::orderBy('created_at', 'desc')->paginate($perPage);
+            $totalCategories = Category::count();
+        } else {
+            return redirect()->route('home');
+        }
 
         if ($request->ajax()) {
-            return view('admin.partials.categoryRows', compact('categories'))->render();
+            return view('admin.partials.categoryRows', ['categories' => $categories])->render();
         }
 
         return view('admin.Category.categoryListTable', compact('categories', 'totalCategories'));
-        }
+
+ 
 
     }
 
