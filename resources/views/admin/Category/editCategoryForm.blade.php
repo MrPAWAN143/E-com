@@ -18,8 +18,8 @@
             </p>
         </div>
 
-        <form action="#" class="editCategory" enctype="multipart/form-data">
-            @csrf
+        <form  class="editCategory" enctype="multipart/form-data">
+
             <input type="hidden" name="id" value="{{ $category->id }}">
 
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">

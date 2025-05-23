@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->string('description')->nullable();
-            $table->string('image')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
@@ -28,6 +27,7 @@ return new class extends Migration
             $table->boolean('is_best_seller')->default(false);
             $table->boolean('is_special')->default(false);
             $table->boolean('is_onsale')->default(false);
+            $table->string('featured_image')->nullable();
             $table->boolean('is_discount')->default(false);
             $table->decimal('price', 10, 2)->nullable();
             $table->decimal('discount_price', 10, 2)->nullable();

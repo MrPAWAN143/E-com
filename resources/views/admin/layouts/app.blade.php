@@ -22,7 +22,7 @@
         @include('admin.sideMenu')
 
         <!-- Main content -->
-        <div class="flex-1 px-6 overflow-y-auto bg-gray-900 ">
+        <div class="flex-1 px-6  bg-gray-900 ">
             @include('admin.dashboardHeader')
             @yield('content')
             @yield('showForm')
