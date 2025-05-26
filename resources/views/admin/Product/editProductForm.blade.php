@@ -29,7 +29,9 @@
                 <select id="selectcategory" name="category_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     <option value="">Select Category</option>
                     @foreach ($category as $cats)
-                    <option value="{{ $cats->id }}" {{ $cats->id == $product->category_id ? 'selected' : '' }}>{{ $cats->name }}</option>
+                    <option value="{{ $cats->id }}" @selected($cats->id == $product->category_id)>
+                        {{ $cats->name }}
+                    </option>
                     @endforeach
                 </select>
             </div>
@@ -38,17 +40,20 @@
                 <select id="sub_category" name="sub_category_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                     <option value="">Select Sub Category</option>
                     @foreach ($subCategory as $subcats)
-                    <option value="{{ $subcats->id }}" {{ $subcats->id == $product->sub_category_id ? 'selected' : '' }}>{{ $subcats->name }}</option>
+                    <option value="{{ $subcats->id }}" @selected($subcats->id == $product->sub_category_id)>
+                        {{ $subcats->name }}
+                    </option>
                     @endforeach
                 </select>
             </div>
             <div>
                 <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price (₹)</label>
-                <input type="text" name="price" id="price" value="{{ $product->price }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="₹2499" required="">
+                <input type="text" name="price" id="price" value="{{$product->price != null ? $product->price : '0' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="₹2499" required="">
             </div>
             <div>
                 <label for="discount_price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Discount (%)</label>
-                <input type="text" name="discount_price" value="{{ round((($product->price - $product->discount_price) / $product->price) * 100) }}%" id="discount_price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="10">
+                <input type="text" name="discount_price" value="{{ $product->price != 0 ? round(($product->discount_price / $product->price) * 100) . '%' : '0%' }}"
+                    id="discount_price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="10">
             </div>
             <div>
                 <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantity</label>
@@ -128,7 +133,6 @@
 
     };
     CKEDITOR.replace('ckeditor');
-
 </script>
 
 <script type="module" src="{{asset('assets/js/product.js')}}"></script>
