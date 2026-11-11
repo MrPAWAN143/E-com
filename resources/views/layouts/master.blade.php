@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header class="bg-contrast px-5 shadow-lg sticky top-0 z-[9999]">
+    <header class="bg-contrast shadow-lg sticky top-0 z-[9999]">
         @include('layouts.header')
     </header>
 
