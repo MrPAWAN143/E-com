@@ -33,7 +33,7 @@ class SubCategoryController extends Controller
                 'meta_title' => 'nullable|string|max:255',
                 'meta_description' => 'nullable|string|max:500',
                 'meta_keywords' => 'nullable|string|max:255',
-                'category_id' => 'required|exists:category,id',
+                'category_id' => 'required|exists:categories,id',
                 'image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'description' => 'nullable|string',
 
