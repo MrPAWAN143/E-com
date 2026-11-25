@@ -31,13 +31,13 @@ class ProductController extends Controller
         $user = Auth::user();
         if ($user->user_type === 'admin' || $user->user_type == 'super_admin') {
             $validated = $request->validate([
-                'product_name' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
                 'slug' => 'nullable|string|max:255|unique:product,slug',
                 'meta_title' => 'nullable|string|max:255',
                 'meta_description' => 'nullable|string|max:500',
                 'featured_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'meta_keywords' => 'nullable|string|max:255',
-                'category_id' => 'required|exists:category,id',
+                'category_id' => 'required|exists:categories,id',
                 'sub_category_id' => 'nullable|exists:sub_category,id',
                 'price' => 'required|numeric',
                 'discount_price' => 'nullable|string|max:5',
@@ -133,7 +133,7 @@ class ProductController extends Controller
         $user = Auth::user();
         $id = Product::where('slug', $slug)->value('id');
         if (in_array($user->user_type, ['admin', 'super_admin'])) {
-            $product = Product::with('category', 'subCategory', 'productImages');
+            $product = Product::with('categories', 'subCategory', 'productImages');
             if ($user->user_type !== 'super_admin') {
                 $product->where('parent_id', $user->id);
             }
@@ -145,7 +145,7 @@ class ProductController extends Controller
                 $subCategory = SubCategory::where('category_id', $product->category_id)->get();
                 $productImages = ProductImage::where('product_id', $id)->get();
 
-                return view('admin.Product.editProductForm', compact('product', 'category', 'subCategory', 'productImages'));
+                return view('admin.Product.editProductForm', compact('product', 'categories', 'subCategory', 'productImages'));
             } else {
                 return redirect()->route('product-list')->with('error', 'Product not found.');
             }
@@ -157,13 +157,13 @@ class ProductController extends Controller
         $user = Auth::user();
         if ($user->user_type === 'admin' || $user->user_type == 'super_admin') {
             $validated = $request->validate([
-                'product_name' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
                 'slug' => 'nullable|string|max:255',
                 'meta_title' => 'nullable|string|max:255',
                 'meta_description' => 'nullable|string|max:500',
                 'featured_image' => 'nullable|image|mimes:jpg,jpeg,png,webp',
                 'meta_keywords' => 'nullable|string|max:255',
-                'category_id' => 'required|exists:category,id',
+                'category_id' => 'required|exists:categories,id',
                 'sub_category_id' => 'nullable|exists:sub_category,id',
                 'price' => 'required|numeric',
                 'discount_price' => 'nullable|string|max:5',
@@ -281,13 +281,13 @@ class ProductController extends Controller
         if ($user->user_type === 'admin') {
 
             $products = Product::where('parent_id', $user->id)
-                ->with('category', 'subCategory', 'productImages')
+                ->with('categories', 'subCategory', 'productImages')
                 ->orderBy('created_at', 'desc')
                 ->paginate($perPage);
 
             $totalProducts = Product::where('parent_id', $user->id)->count();
         } elseif ($user->user_type === 'super_admin') {
-            $products = Product::with('category', 'subCategory', 'productImages', 'getUser')
+            $products = Product::with('categories', 'subCategory', 'productImages', 'getUser')
                 ->orderBy('product.created_at', 'desc')
                 ->paginate($perPage);
 
