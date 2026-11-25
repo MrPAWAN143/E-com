@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #F2DFCE;
+    --color-primary-navy: #14243A;
     --color-secondary: #f2f2f2;
     --color-tertiary: #733917;
-    --color-contrast: #A67951;
-    --color-accent: #1A2426;
+    --color-hover-orange: #DF5728;
+    --color-orange-accent: #F36B38;
+    --color-background: #F8F9FB;
+    --color-text: #182230;
+    --color-cards: #FFFFFF;
 }
 
 @layer components {

@@ -1,283 +1,483 @@
 
+{{-- ==========================================
+     ZIL CONNEXION - PREMIUM RESPONSIVE HEADER
+     Laravel Blade + Tailwind CSS
+=========================================== --}}
 
-<nav class="bg-white dark:bg-gray-800 antialiased">
-    <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-2">
-        <div class="flex items-center justify-between">
+<header class="relative z-50 w-full bg-white text-[#14243A] shadow-sm">
 
-            <div class="flex items-center space-x-8">
-                <div class="shrink-0">
-                    <a href="#" title="" class="">
-                        <img class="block w-auto h-8 dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg" alt="">
-                        <img class="hidden w-20 h-auto dark:block" src="{{asset('assets/logo/logo.png')}}" alt="">
-                    </a>
-                </div>
+    {{-- TOP ANNOUNCEMENT BAR --}}
+    <div class="hidden bg-background text-primary-navy md:block">
+        <div class="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-2 text-xs">
 
-                <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
-                    <li>
-                        <a href="#" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Home
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Best Sellers
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Gift Ideas
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title="" class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Today's Deals
-                        </a>
-                    </li>
-                    <li class="shrink-0">
-                        <a href="#" title="" class="text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
-                            Sell
-                        </a>
-                    </li>
-                </ul>
+            <div class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-[#F36B38]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/>
+                    <circle cx="7" cy="18" r="2"/>
+                    <circle cx="18" cy="18" r="2"/>
+                </svg>
+                <span class="font-medium">
+                    Discover more. Shop smarter. Delivered across Mauritius.
+                </span>
+            </div>
+
+            <div class="flex items-center gap-4 text-primary-navy">
+                <a href="#" class="hover:text-hover-orange">Track Order</a>
+                <span>|</span>
+                <a href="#" class="hover:text-hover-orange">Help & Support</a>
+                <span>|</span>
+                <a href="#" class="hover:text-hover-orange">Contact Us</a>
+                <span class="ml-2 font-semibold">🇲🇺 MUR⌄</span>
+            </div>
+
+        </div>
+    </div>
 
 
-                <form class="max-w-lg mx-auto">
-                    <div class="flex">
-                        <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
-                        <button id="dropdown-button" data-dropdown-toggle="dropdown" class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">All categories <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                            </svg></button>
-                        <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdown-button">
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mockups</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Templates</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Design</button>
-                                </li>
-                                <li>
-                                    <button type="button" class="inline-flex w-full px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logos</button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="relative w-[260px]">
-                            <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search Product " required />
-                            <button type="submit" class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                </svg>
-                                <span class="sr-only">Search</span>
-                            </button>
-                        </div>
+    {{-- MAIN HEADER --}}
+    <div class="border-b border-gray-100">
+
+        <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+
+            {{-- LOGO --}}
+            <div class="shrink-0">
+                <a href="{{ url('/') }}" class="flex items-center">
+                    <img
+                        src="{{ asset('assets/logo/zil_connection_logo.webp') }}"
+                        alt="ZIL Connexion"
+                        class="h-10 w-auto object-contain sm:h-12"
+                    >
+                </a>
+            </div>
+
+
+            {{-- DESKTOP SEARCH --}}
+            <div class="hidden max-w-2xl flex-1 md:block">
+
+                <form action="#" method="GET" class="flex w-full">
+
+                    <div class="flex w-full overflow-hidden rounded-full border border-gray-200 bg-white shadow-sm transition focus-within:border-[#F36B38] focus-within:ring-2 focus-within:ring-orange-100">
+
+                        <select
+                            name="category"
+                            class="cursor-pointer border-r border-gray-200 bg-gray-50 px-4 text-sm font-medium text-gray-700 outline-none"
+                        >
+                            <option value="">All Categories</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="home">Home & Living</option>
+                            <option value="beauty">Beauty</option>
+                            <option value="sports">Sports</option>
+                            <option value="automotive">Automotive</option>
+                        </select>
+
+                        <input
+                            type="search"
+                            name="q"
+                            placeholder="Search for products..."
+                            class="min-w-0 flex-1 border-0 px-4 py-3 text-sm outline-none focus:ring-0"
+                        >
+
+                        <button
+                            type="submit"
+                            class="flex w-14 items-center justify-center bg-[#F36B38] text-white transition hover:bg-[#df5728]"
+                            aria-label="Search"
+                        >
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="7" stroke-width="2"/>
+                                <path d="m20 20-4-4" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+
                     </div>
                 </form>
 
             </div>
 
-            <div class="flex items-center lg:space-x-2">
 
-                <button id="myCartDropdownButton1" data-dropdown-toggle="myCartDropdown1" type="button" class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
-                    <span class="sr-only">
-                        Cart
-                    </span>
-                    <svg class="w-5 h-5 lg:me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                    </svg>
-                    <span class="hidden sm:flex">My Cart</span>
-                    <svg class="hidden sm:flex w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                    </svg>
-                </button>
+            {{-- HEADER ACTIONS --}}
+            <div class="flex items-center gap-3 sm:gap-5">
 
-                <div id="myCartDropdown1" class="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800">
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#" class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple iPhone 15</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$599</p>
-                        </div>
-
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
-
-                            <button data-tooltip-target="tooltipRemoveItem1a" type="button" class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem1a" role="tooltip" class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#" class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple iPad Air</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$499</p>
-                        </div>
-
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
-
-                            <button data-tooltip-target="tooltipRemoveItem2a" type="button" class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem2a" role="tooltip" class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#" class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple Watch SE</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$598</p>
-                        </div>
-
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 2</p>
-
-                            <button data-tooltip-target="tooltipRemoveItem3b" type="button" class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem3b" role="tooltip" class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#" class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Sony Playstation 5</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$799</p>
-                        </div>
-
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
-
-                            <button data-tooltip-target="tooltipRemoveItem4b" type="button" class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem4b" role="tooltip" class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#" class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple iMac 20"</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$8,997</p>
-                        </div>
-
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 3</p>
-
-                            <button data-tooltip-target="tooltipRemoveItem5b" type="button" class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem5b" role="tooltip" class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="#" title="" class="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" role="button"> Proceed to Checkout </a>
-                </div>
+                {{-- ACCOUNT --}}
                 @auth
-                @if(auth()->user()->username)
-                <button id="userDropdownButton1" data-dropdown-toggle="userDropdown1" type="button" class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
-                    <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
-                    {{(auth()->user()->username) ? auth()->user()->username : 'Account'}}
-                    <svg class="w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-                    </svg>
-                </button>
 
-                <div id="userDropdown1" class="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
-                    <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
-                        <li><a href="{{ route('user.dashboard') }}" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> My Account </a></li>
-                        <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> My Orders </a></li>
-                        <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Settings </a></li>
-                        <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Favourites </a></li>
-                        <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Delivery Addresses </a></li>
-                        <li><a href="#" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Billing Data </a></li>
-                    </ul>
+                    @if(auth()->user()->username)
 
-                    <div class="p-2 text-sm font-medium text-gray-900 dark:text-white">
-                        <form action="{{route('logout')}}" method="post" class="block px-4 py-0 hover:bg-gray-100 dark:hover:bg-gray-700">
-                            @csrf
-                            <button type="submit" class="w-full text-left">Logout</button>
-                        </form>
+                        <div class="group relative hidden sm:block">
+
+                            <button class="flex items-center gap-2 rounded-lg p-2 text-sm font-semibold hover:bg-gray-50">
+
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="8" r="3.5" stroke-width="1.8"/>
+                                    <path d="M5 20c.6-3.2 3.2-5 7-5s6.4 1.8 7 5" stroke-width="1.8"/>
+                                </svg>
+
+                                <span class="max-w-[100px] truncate">
+                                    {{ auth()->user()->username }}
+                                </span>
+
+                                <span>⌄</span>
+
+                            </button>
+
+
+                            <div class="invisible absolute right-0 top-full z-50 mt-2 w-56 translate-y-2 rounded-xl border border-gray-100 bg-white p-2 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+
+                                <a href="{{ route('user.dashboard') }}"
+                                   class="block rounded-lg px-4 py-3 text-sm hover:bg-orange-50 hover:text-[#F36B38]">
+                                    My Account
+                                </a>
+
+                                <a href="#"
+                                   class="block rounded-lg px-4 py-3 text-sm hover:bg-orange-50 hover:text-[#F36B38]">
+                                    My Orders
+                                </a>
+
+                                <a href="#"
+                                   class="block rounded-lg px-4 py-3 text-sm hover:bg-orange-50 hover:text-[#F36B38]">
+                                    Settings
+                                </a>
+
+                                <a href="#"
+                                   class="block rounded-lg px-4 py-3 text-sm hover:bg-orange-50 hover:text-[#F36B38]">
+                                    Favourites
+                                </a>
+
+                                <div class="my-2 border-t"></div>
+
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+
+                                    <button type="submit"
+                                        class="w-full rounded-lg px-4 py-3 text-left text-sm text-red-600 hover:bg-red-50">
+                                        Logout
+                                    </button>
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    @else
+
+                        <div class="hidden items-center gap-2 sm:flex">
+                            <a href="{{ route('register') }}"
+                               class="rounded-full bg-[#F36B38] px-4 py-2 text-sm font-semibold text-white hover:bg-[#df5728]">
+                                Sign Up
+                            </a>
+
+                            <a href="{{ route('login') }}"
+                               class="rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold hover:border-[#F36B38] hover:text-[#F36B38]">
+                                Login
+                            </a>
+                        </div>
+
+                    @endif
+
+                @else
+
+                    <div class="hidden items-center gap-2 sm:flex">
+
+                        <a href="{{ route('register') }}"
+                           class="rounded-full bg-[#F36B38] px-4 py-2 text-sm font-semibold text-white hover:bg-[#df5728]">
+                            Sign Up
+                        </a>
+
+                        <a href="{{ route('login') }}"
+                           class="rounded-full border border-gray-200 px-4 py-2 text-sm font-semibold hover:border-[#F36B38] hover:text-[#F36B38]">
+                            Login
+                        </a>
+
                     </div>
-                </div>
-                @else
-                <div class="flex items-center space-x-2">
-                <a href="{{ route('register') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Signup</a>
-                <a href="{{ route('login') }}" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Login</a>
-                </div>
-                @endif
-                @else
-                <a href="{{ route('register') }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Signup</a>
-                <a href="{{ route('login') }}" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Login</a>
 
                 @endauth
 
-                <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1" aria-controls="ecommerce-navbar-menu-1" aria-expanded="false" class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">
-                    <span class="sr-only">
-                        Open Menu
-                    </span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+
+                {{-- WISHLIST --}}
+                <a href="#"
+                   class="relative hidden rounded-lg p-2 text-[#14243A] transition hover:bg-orange-50 hover:text-[#F36B38] sm:block"
+                   aria-label="Wishlist">
+
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                              d="M20.8 8.8c0 5.1-8.8 10-8.8 10s-8.8-4.9-8.8-10A4.8 4.8 0 0 1 12 6.5a4.8 4.8 0 0 1 8.8 2.3Z"/>
                     </svg>
+
+                    <span class="absolute right-0 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-[#F36B38] text-[10px] text-white">
+                        0
+                    </span>
+
+                </a>
+
+
+                {{-- CART --}}
+                <div class="group relative">
+
+                    <button class="relative flex items-center gap-2 rounded-lg p-2 hover:bg-gray-50">
+
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                                  d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/>
+                            <circle cx="10" cy="20" r="1.2"/>
+                            <circle cx="18" cy="20" r="1.2"/>
+                        </svg>
+
+                        <span class="hidden text-sm font-semibold sm:block">Cart</span>
+
+                        <span class="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#F36B38] text-[10px] text-white">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    {{-- CART DROPDOWN --}}
+                    <div class="invisible absolute right-0 top-full z-50 mt-3 w-72 rounded-xl border border-gray-100 bg-white p-5 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
+
+                        <h3 class="font-bold text-[#14243A]">
+                            Your Shopping Cart
+                        </h3>
+
+                        <div class="py-8 text-center">
+
+                            <svg class="mx-auto mb-3 h-10 w-10 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                      d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/>
+                            </svg>
+
+                            <p class="text-sm font-semibold text-gray-700">
+                                Your cart is empty
+                            </p>
+
+                            <p class="mt-1 text-xs text-gray-400">
+                                Discover products you will love.
+                            </p>
+
+                        </div>
+
+                        <a href="{{ url('/') }}"
+                           class="block rounded-full bg-[#F36B38] px-4 py-3 text-center text-sm font-bold text-white hover:bg-[#df5728]">
+                            Start Shopping
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                {{-- MOBILE MENU BUTTON --}}
+                <button
+                    id="zil-mobile-menu-button"
+                    type="button"
+                    aria-controls="zil-mobile-menu"
+                    aria-expanded="false"
+                    class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-100 md:hidden"
+                >
+
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-width="2" stroke-linecap="round"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+
                 </button>
+
             </div>
+
         </div>
 
-        <div id="ecommerce-navbar-menu-1" class="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 hidden px-4 mt-4">
-            <ul class="text-gray-900 dark:text-white text-sm font-medium space-y-3">
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Best Sellers</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Gift Ideas</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Games</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Electronics</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home & Garden</a>
-                </li>
-            </ul>
+
+        {{-- MOBILE SEARCH --}}
+        <div class="px-4 pb-4 md:hidden">
+
+            <form action="#" method="GET"
+                  class="flex overflow-hidden rounded-full border border-gray-200 bg-gray-50">
+
+                <input
+                    type="search"
+                    name="q"
+                    placeholder="Search for products..."
+                    class="w-full border-0 bg-transparent px-4 py-3 text-sm outline-none focus:ring-0"
+                >
+
+                <button type="submit" class="px-4 text-[#F36B38]" aria-label="Search">
+
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7" stroke-width="2"/>
+                        <path d="m20 20-4-4" stroke-width="2"/>
+                    </svg>
+
+                </button>
+
+            </form>
+
         </div>
+
     </div>
-</nav>
+
+
+    {{-- DESKTOP CATEGORY NAVIGATION --}}
+    <nav class="hidden border-b border-gray-100 bg-primary-navy md:block ">
+
+        <div class="mx-auto flex max-w-[1440px] items-center gap-7 px-6 py-3">
+
+            {{-- SHOP CATEGORY DROPDOWN --}}
+            <div class="group relative shrink-0">
+
+                <button class="flex items-center gap-3 rounded-full bg-[#F36B38] px-5 py-2.5 text-sm font-bold text-white transition hover:bg-[#df5728]">
+
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-width="2" stroke-linecap="round"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+
+                    Shop by Category
+
+                    <span></span>
+
+                </button>
+
+
+                <div class="invisible absolute left-0 top-full z-50 mt-2 w-64 rounded-xl border border-gray-100 bg-white p-3 opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:opacity-100">
+
+                    @foreach(['Fashion', 'Electronics', 'Home & Living', 'Beauty', 'Sports & Fitness', 'Automotive', 'Auto & Tools'] as $category)
+
+                        <a href="#"
+                           class="block rounded-lg px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-orange-50 hover:text-[#F36B38]">
+                            {{ $category }}
+                        </a>
+
+                    @endforeach
+
+                </div>
+
+            </div>
+
+
+            {{-- NAVIGATION LINKS --}}
+            <div class="flex flex-1 items-center justify-between gap-4 text-sm font-semibold text-white">
+
+                <a href="{{ url('/') }}" class="whitespace-nowrap hover:text-[#F36B38]">
+                    Home
+                </a>
+
+                <a href="#" class="whitespace-nowrap hover:text-[#F36B38]">
+                    Fashion <span>⌄</span>
+                </a>
+
+                <a href="#" class="whitespace-nowrap hover:text-[#F36B38]">
+                    Electronics <span>⌄</span>
+                </a>
+
+                <a href="#" class="whitespace-nowrap hover:text-[#F36B38]">
+                    Home & Living <span>⌄</span>
+                </a>
+
+                <a href="#" class="whitespace-nowrap hover:text-[#F36B38]">
+                    Beauty <span>⌄</span>
+                </a>
+
+                <a href="#" class="whitespace-nowrap hover:text-[#F36B38]">
+                    Sports <span>⌄</span>
+                </a>
+
+                <a href="#" class="whitespace-nowrap hover:text-[#F36B38]">
+                    Automotive <span>⌄</span>
+                </a>
+
+                <a href="#" class="flex items-center gap-1 whitespace-nowrap font-bold text-[#F36B38]">
+                    🔥 Deals
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    {{-- MOBILE NAVIGATION --}}
+    <div id="zil-mobile-menu"
+         class="hidden border-t border-gray-100 bg-white px-4 py-5 shadow-lg md:hidden">
+
+        <h3 class="mb-4 text-sm font-bold text-[#14243A]">
+            Browse Categories
+        </h3>
+
+        <div class="grid grid-cols-2 gap-2">
+
+            @foreach(['Home', 'Fashion', 'Electronics', 'Home & Living', 'Beauty', 'Sports', 'Automotive', '🔥 Todays Deals'] as $category)
+
+                <a href="#"
+                   class="rounded-lg bg-gray-50 px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-orange-50 hover:text-[#F36B38]">
+
+                    {{ $category }}
+
+                </a>
+
+            @endforeach
+
+        </div>
+
+
+        <div class="mt-5 flex gap-3 border-t border-gray-100 pt-4">
+
+            @auth
+
+                <a href="{{ route('user.dashboard') }}"
+                   class="flex-1 rounded-full border border-gray-200 px-4 py-3 text-center text-sm font-semibold">
+                    My Account
+                </a>
+
+                <form action="{{ route('logout') }}" method="POST" class="flex-1">
+                    @csrf
+
+                    <button type="submit"
+                            class="w-full rounded-full bg-[#14243A] px-4 py-3 text-sm font-semibold text-white">
+                        Logout
+                    </button>
+                </form>
+
+            @else
+
+                <a href="{{ route('login') }}"
+                   class="flex-1 rounded-full border border-gray-200 px-4 py-3 text-center text-sm font-semibold">
+                    Login
+                </a>
+
+                <a href="{{ route('register') }}"
+                   class="flex-1 rounded-full bg-[#F36B38] px-4 py-3 text-center text-sm font-semibold text-white">
+                    Sign Up
+                </a>
+
+            @endauth
+
+        </div>
+
+    </div>
+
+</header>
+
+
+{{-- MOBILE MENU JAVASCRIPT --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const menuButton = document.getElementById('zil-mobile-menu-button');
+        const mobileMenu = document.getElementById('zil-mobile-menu');
+
+        if (menuButton && mobileMenu) {
+
+            menuButton.addEventListener('click', function () {
+
+                mobileMenu.classList.toggle('hidden');
+
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+
+                menuButton.setAttribute('aria-expanded', String(!isExpanded));
+
+            });
+
+        }
+
+    });
+</script>
