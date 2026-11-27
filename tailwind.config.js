@@ -10,11 +10,11 @@ export default {
   theme: {
     extend: {
          colors: {
-        primary: '#F2DFCE',
-        text: '#f2f2f2',
-        tertiary: '#733917',
-        secondary: '#A67951',
-        contrast: '#1A2426',
+        primary_navy: '#14243A',
+        text: '#182230',
+        orange_accent: '#F36B38',
+        background: '#F8F9FB',
+        hover_orange: '#DF5728',
       },
     },
   },
