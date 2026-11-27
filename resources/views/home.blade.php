@@ -11,7 +11,7 @@
     <div class="slider-wrapper relative w-full h-full">
         <!-- Slide 1 -->
         <div class="slide w-full h-full absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-100 z-0"
-            style="background-image: url({{ asset('assets/images/banner1.webp') }})">
+            style="background-image: url({{ asset('assets/images/home-banner2.webp') }})">
             <div class="w-full h-full flex items-center bg-[var(--primary-700)]/60 px-4 sm:px-6 md:px-12 lg:px-[10%]">
                 <div class="max-w-2xl text-[var(--secondary-100)] text-center md:text-left mx-auto md:mx-0">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
@@ -29,9 +29,9 @@
 
         <!-- Slide 2 -->
         <div class="slide w-full h-full absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-0 z-0"
-            style="background-image: url('{{ asset('assets/images/banner2.webp') }}')">
-            <div class="w-full h-full flex justify-end items-center bg-[var(--primary-700)]/60 px-4 sm:px-6 md:px-12 lg:px-[10%]">
-                <div class="max-w-2xl text-[var(--secondary-100)] text-center md:text-right   mx-auto md:mx-0">
+            style="background-image: url('{{ asset('assets/images/home-banner3.webp') }}')">
+            <div class="w-full h-full flex justify-start items-center bg-[var(--primary-700)]/60 px-4 sm:px-6 md:px-12 lg:px-[10%]">
+                <div class="max-w-2xl text-[var(--secondary-100)] text-center md:text-left   mx-auto md:mx-0">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
                         Find Your Style with Confidence
                     </h1>
@@ -47,9 +47,9 @@
 
         <!-- Slide 3 -->
         <div class="slide w-full h-full absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-0 z-0"
-            style="background-image: url({{ asset('assets/images/banner3.webp')}})">
-            <div class="w-full h-full flex justify-end items-center bg-[var(--primary-700)]/60 px-4 sm:px-6 md:px-12 lg:px-[10%]">
-                <div class="max-w-2xl text-[var(--secondary-100)] text-center md:text-right mx-auto md:mx-0">
+            style="background-image: url({{ asset('assets/images/home-banner1.webp')}})">
+            <div class="w-full h-full flex justify-start items-center bg-[var(--primary-700)]/60 px-4 sm:px-6 md:px-12 lg:px-[10%]">
+                <div class="max-w-2xl text-[var(--secondary-100)] text-center md:text-left mx-auto md:mx-0">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight">
                         Find Your Style with Confidence
                     </h1>
