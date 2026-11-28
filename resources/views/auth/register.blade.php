@@ -12,8 +12,8 @@
 <body>
     <section class="bg-gray-50 dark:bg-gray-900">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <a href="#" class="flex items-center mb-0 text-2xl font-semibold text-gray-900 dark:text-white">
-                <img class="w-32 h-auto mr-2" src="{{asset('assets/logo/logo.png')}}" alt="logo">
+            <a href="#" class="flex items-center mb-2 ">
+                <img class="w-50 h-auto mr-2" src="{{asset('assets/logo/zil_connection_logo.webp')}}" alt="logo">
             </a>
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -51,7 +51,7 @@
                                 <label for="terms" class="font-light text-gray-500 dark:text-gray-300">I accept the <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Terms and Conditions</a></label>
                             </div> -->
                         <!-- </div> -->
-                        <button type="submit" class="focus:outline-none block w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Create an account</button>
+                        <button type="submit" class="submitBtn focus:outline-none block w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Create an account</button>
                         <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                             Already have an account? <a href="{{route('login')}}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                         </p>
@@ -72,6 +72,7 @@
 
         $(document).ready(function() {
             $('#username').on('input', function(e) {
+                $('submitBtn').text('Loading...');
                 e.preventDefault();
                 let username = $(this).val();
                 console.log(username);
@@ -100,9 +101,11 @@
                             $('#username').addClass('!border-green-500');
                             $('#msg').text('Username is available').addClass('!text-green-500').removeClass('!text-red-500');
                         }
+                        $('submitBtn').text('Create an Account');
                     },
                     error: function(error) {
                         console.log('Error checking username:', error);
+                        $('submitBtn').text('Create an Account');
                     }
 
 
