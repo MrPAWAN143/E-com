@@ -7,6 +7,8 @@
     <title>@yield('title')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('assets/css/global.css') }}">
+    <link rel="icon" href="{{ asset('assets/logo/zil_connection_logo.webp') }}">
+
     <script src="https://cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
     <style>
         .cke_notification {

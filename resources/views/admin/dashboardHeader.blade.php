@@ -1,5 +1,5 @@
 <header class="sticky top-0 z-99999 flex w-full border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900 lg:border-b">
-    <div class="flex grow flex-col items-center justify-between lg:flex-row lg:px-6">
+    <div class="flex grow flex-col items-center justify-between lg:flex-row lg:px-0">
         <div class="flex w-full items-center justify-between gap-2 border-b border-gray-200 px-3 py-3 dark:border-gray-800 sm:gap-4 lg:justify-normal lg:border-b-0 lg:px-0 lg:py-4">
             <!-- Hamburger Toggle BTN -->
             <button :class="sidebarToggle ? 'lg:bg-transparent dark:lg:bg-transparent bg-gray-100 dark:bg-gray-800' : ''" class="z-99999 flex h-10 w-10 items-center justify-center rounded-lg border-gray-200 text-gray-500 dark:border-gray-800 dark:text-gray-400 lg:h-11 lg:w-11 lg:border" @click.stop="sidebarToggle = !sidebarToggle">
